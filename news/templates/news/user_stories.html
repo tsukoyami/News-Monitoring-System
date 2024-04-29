@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}User Stories{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'news/user_stories_style.css' %}">
+    <div class="container">
+        <!-- Heading and fetch button -->
+        <div class="heading-section">
+            <h2>User Stories</h2>
+            <!-- Fetch button to fetch news -->
+            <form action="{% url 'update_stories' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="fetch-btn">Fetch News</button>
+            </form>
+        </div>
+        <!-- Search form and add button -->
+        <div class="search-form">
+            <form method="GET" action="{% url 'search_user_stories' %}">
+                <input type="text" name="query" placeholder="Search by title or body text" value="{{ query }}">
+                <button type="submit">Search</button>
+            </form>
+            <!-- Add button to add story -->
+            <a href="{% url 'add_story' %}" class="add-btn">Add Story</a>
+        </div>
+
+        <!-- Story list -->
+        <ul class="story-list">
+            {% for story in user_stories %}
+                <li class="story-block">
+                    <a href="{{ story.url }}" class="story-link">
+                        <h3>{{ story.title }}</h3>
+                        <p>Source: {{ story.source.source_name }}</p>
+                        <p>Published Date: {{ story.published_date }}</p>
+                        <p>{{ story.body_text }}</p>
+                        
+                        <ul class="tagged-companies">
+                            {% for company in story.source.company.all %}
+                                <li>{{ company.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </a>
+                    <div class="action-buttons">
+                        <div class="edit-delete-btns"> <!-- Added a container for buttons -->
+                            <a href="{% url 'edit_story' story.pk %}" class="edit-btn">Edit</a>
+                            <a href="{% url 'delete_story' story.pk %}" class="delete-btn">Delete</a>
+                        </div>
+                    </div>
+                </li>
+            {% empty %}
+                <li>No stories found.</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

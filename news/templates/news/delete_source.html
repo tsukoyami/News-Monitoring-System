@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Delete Source{% endblock %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'news/delete_source_style.css' %}">
+  <h2>Delete Source</h2>
+  <p>Are you sure you want to delete "{{ source.source_name }}"?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+  </form>
+{% endblock %}

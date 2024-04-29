@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}Source List{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'news/source_list_style.css' %}">
+    <h2>Source List</h2>
+
+    <!-- Add button to add source -->
+    <div style="text-align: center;">
+        <form method="GET" action="{% url 'search_user_sources' %}" class="search-form">
+            <input type="text" name="query" placeholder="Search by name or URL" value="{{ query }}">
+            <button type="submit" class="search-btn">Search</button>
+        </form>
+        <a href="{% url 'add_source' %}" class="add-btn">Add Source</a>
+    </div>
+        
+    
+
+    <!-- Search form -->
+
+
+    <ul class="source-list">
+        {% for source in user_sources %}
+            <li>
+                <div class="source-info">
+                    <h3>{{ source.source_name }}</h3>
+                    <p><a href="{{ source.source_url }}">{{ source.source_url }}</a></p>
+                </div>
+                <div class="source-actions">
+                    <a href="{% url 'edit_source' source.pk %}" class="edit-btn">Edit</a>
+                    <a href="{% url 'delete_source' source.pk %}" class="delete-btn">Delete</a>
+                </div>
+            </li>
+        {% empty %}
+            <li>No sources found.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

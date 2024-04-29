@@ -1,0 +1,14 @@
+<!-- edit_source.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Edit Source{% endblock %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'news/edit_source_style.css' %}">
+  <h2>Edit Source</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update</button>
+  </form>
+{% endblock %}

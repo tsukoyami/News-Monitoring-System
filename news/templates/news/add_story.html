@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Add Story{% endblock %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'news/add_story_style.css' %}">
+  <h2>Add Story</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+  </form>
+{% endblock %}

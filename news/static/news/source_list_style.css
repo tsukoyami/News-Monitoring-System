@@ -1,0 +1,105 @@
+/* news/static/news/source_list_style.css */
+
+/* Source list heading */
+h2 {
+    text-align: center;
+  }
+
+  /* Search Form */
+.search-form {
+  margin-bottom: 20px;
+}
+
+.search-form input[type="text"] {
+  padding: 8px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-form button.search-btn {
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-form button.search-btn:hover {
+  background-color: #45a049;
+}
+
+/* Add Source Button */
+.add-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #008CBA;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.add-btn:hover {
+  background-color: #006080;
+}
+
+  
+  /* Container for the source list */
+.source-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+  
+  /* Individual source item */
+.source-list li {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Source name */
+.source-list li .source-info h3 {
+  margin: 0;
+  color: #333;
+}
+  
+  /* Source URL */
+.source-list li .source-info p {
+  margin: 0;
+  color: #666;
+}
+  
+  /* Source actions */
+.source-list li .source-actions {
+  margin-top: 10px;
+}
+  
+/* Edit Button */
+.edit-btn {
+  padding: 6px 12px;
+  background-color: #FFA500;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.edit-btn:hover {
+  background-color: #cc8400;
+}
+
+/* Delete Button */
+.delete-btn {
+  padding: 6px 12px;
+  background-color: #FF4500;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.delete-btn:hover {
+  background-color: #cc3700;
+}

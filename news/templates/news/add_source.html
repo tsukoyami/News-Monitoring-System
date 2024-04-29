@@ -1,0 +1,14 @@
+<!-- add_source.html -->
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Add Source{% endblock %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'news/add_source_style.css' %}">
+  <h2>Add Source</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add</button>
+  </form>
+{% endblock %}

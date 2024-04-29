@@ -1,0 +1,159 @@
+/* Buttons section */
+.buttons-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Action buttons */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  padding: 30px; /* Thick padding for action buttons container */
+}
+
+/* Edit and delete buttons */
+.edit-delete-btns {
+  display: flex;
+  margin-left: 30px; /* Add margin to separate edit/delete buttons */
+}
+
+/* Common button styles */
+.add-btn,
+.fetch-btn,
+.search-form button,
+.edit-btn,
+.delete-btn {
+  padding: 15px 30px; /* Thick padding for all buttons */
+  margin-right: 10px;
+  border: none;
+  border-radius: 8px; /* Slightly rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  text-decoration: none;
+}
+
+/* Primary button styles */
+.add-btn,
+.fetch-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.add-btn:hover,
+.fetch-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Edit button styles */
+.edit-btn {
+  background-color: #ffc107;
+  color: #333;
+}
+
+/* Delete button styles */
+.delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+/* Hover effect */
+.edit-btn:hover,
+.delete-btn:hover {
+  background-color: #f8f9fa; /* Change background color on hover */
+  color: #333; /* Change text color on hover */
+  border-color: #ccc; /* Add border color on hover */
+}
+
+/* Story list */
+.story-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Story block */
+.story-block {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Story link */
+.story-link {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Story title */
+.story-block h3 {
+  margin: 0 0 10px;
+}
+
+/* Tagged companies */
+.tagged-companies {
+  list-style: none;
+  padding: 0;
+}
+
+.tagged-companies li {
+  display: inline;
+  margin-right: 5px;
+  color: #555;
+}
+
+/* Center aligning */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading and fetch button */
+.heading-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* Ensure fetch button and heading are not stuck together */
+.heading-section h2 {
+  margin-right: 50px;
+}
+
+/* Add button */
+.add-btn {
+  padding: 15px 30px;
+  margin-left: auto;
+  background-color: #007bff;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Search form and add button */
+.search-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-form button {
+  padding: 15px 30px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+  background-color: #0056b3;
+}
